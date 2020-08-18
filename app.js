@@ -15,13 +15,15 @@ class Chicken{
         this.health = 100;
         this.hunger = 100;
         this.happiness = 100;
+        this.resting = false;
     }
 
     // feed/hunger drain
     feed(){
-        if (egbert.hunger <= 100) {
-            egbert.hunger+= 20;
-            hunger.src = `/assets/Icons/hungerbar/hungerbar${egbert.hunger}.png`;
+        if (egbert.hunger < 100) {
+            egbert.hunger+= 10;
+            egbert.happiness+= 10;
+            hunger.src = `assets/Icons/hungerbar/hungerbar${egbert.hunger}.png`;
             console.log(`fed: hunger ${egbert.hunger}`);
         }
         else {}
@@ -32,21 +34,21 @@ class Chicken{
         var hungerValue = setInterval(function(){
             egbert.hunger-= 10;
             console.log(`feed-drain: hunger ${egbert.hunger}`);
-            hunger.src = `/assets/Icons/hungerbar/hungerbar${egbert.hunger}.png`;
+            hunger.src = `assets/Icons/hungerbar/hungerbar${egbert.hunger}.png`;
 
             if(egbert.hunger === 0){
                 clearInterval(hungerValue)
                 console.log("cleared: hunger")
                 egbert.petDeath();
             }  
-        }, 3000);
+        }, 3500);
     }
 
     // rest/health drain
     rest(){
         if (egbert.health <= 100) {
-            egbert.health+= 10;
-            health.src = `/assets/Icons/healthbar/healthbar${egbert.health}.png`;
+            egbert.health+= 20;
+            health.src = `assets/Icons/healthbar/healthbar${egbert.health}.png`;
             console.log(`rested: health ${egbert.health}`);
         }
         else {}
@@ -55,10 +57,10 @@ class Chicken{
     healthDrain()
     {
         var healthValue = setInterval(function(){
-            if(egbert.hunger <= 50){
+            if(egbert.hunger <= 70){
                egbert.health-= 10; 
                console.log(`rest-drain: health ${egbert.health}`);
-               health.src = `/assets/Icons/healthbar/healthbar${egbert.health}.png`;
+               health.src = `assets/Icons/healthbar/healthbar${egbert.health}.png`;
             }
 
             if(egbert.health === 0){
@@ -67,14 +69,14 @@ class Chicken{
                 egbert.petDeath();
             }
             else{}
-        }, 1500);
+        }, 2500);
     }
 
     // play/happiness drain
     play(){
         if (egbert.happiness <= 100) {
-            egbert.happiness+= 10;
-            happiness.src = `/assets/Icons/happinessbar/happinessbar${egbert.happiness}.png`;
+            egbert.happiness+= 20;
+            happiness.src = `assets/Icons/happinessbar/happinessbar${egbert.happiness}.png`;
             console.log(`played: happiness ${egbert.happiness}`);
         }
         else {}
@@ -86,7 +88,7 @@ class Chicken{
             if(egbert.happiness <= 100){
                egbert.happiness-= 10; 
                console.log(`happ-drain: happiness ${egbert.happiness}`);
-               happiness.src = `/assets/Icons/happinessbar/happinessbar${egbert.happiness}.png`;
+               happiness.src = `assets/Icons/happinessbar/happinessbar${egbert.happiness}.png`;
             }
 
             if(egbert.happiness === 0){
@@ -95,7 +97,7 @@ class Chicken{
                 egbert.petDeath();
             }
             else{}
-        }, 4500);
+        }, 4000);
     }
 
 
