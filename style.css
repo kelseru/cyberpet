@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assets/shell.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 98vh;
+    width: 99vw;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+    height: 47vh;
+    width: 47vh;
+    margin-top: 6.5vh;
+    margin-left: 2.5vh;
+}
+
+#pet-stats {
+    display: flex;
+    justify-content: center;
+    height: 6vh;
+    width: inherit;
+}
+
+#pet-stats ul {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}
+
+#pet-zone {
+    height: 50vh;
+}
+
+#user-actions {
+    display: flex;
+    justify-content: center;
+    height: 3vh;
+    width: inherit;
+}
+
+#user-actions ul {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}
